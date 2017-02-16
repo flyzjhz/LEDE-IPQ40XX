@@ -36,13 +36,6 @@ define Package/libustream-openssl
   VARIANT:=openssl
 endef
 
-define Package/libustream-cyassl
-  $(Package/libustream/default)
-  TITLE += (cyassl)
-  DEPENDS += +PACKAGE_libustream-cyassl:libcyassl
-  VARIANT:=cyassl
-endef
-
 define Package/libustream-mbedtls
   $(Package/libustream/default)
   TITLE += (mbedtls)
@@ -69,5 +62,4 @@ Package/libustream-cyassl/install = $(Package/libustream/default/install)
 Package/libustream-mbedtls/install = $(Package/libustream/default/install)
 
 $(eval $(call BuildPackage,libustream-mbedtls))
-$(eval $(call BuildPackage,libustream-cyassl))
 $(eval $(call BuildPackage,libustream-openssl))
